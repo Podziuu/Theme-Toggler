@@ -1,3 +1,108 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    --accent-color: orangered;
+    --background-color: #fff;
+    --text-color: black;
+    --btn-text-color: white;
+    --sun-opacity: 0;
+    --moon-opacity: 1;
+    --moon-translate: -1000px;
+    --sun-translate: 0px;
+    --sun-display: block;
+
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+body.dark {
+    --background-color: #333;
+    --btn-text-color: black;
+    --text-color: white;
+    --accent-color: #D0D066;
+    --sun-opacity: 1;
+    --moon-opacity: 0;
+    --moon-translate: 0px;
+    --sun-translate: 1000px;
+    --sun-display: none;
+}
+
+.icon {
+    margin: 0 auto;
+    font-size: 4rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    color: var(--accent-color);
+    transition: .5s;
+}
+
+
+.header{
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.icons {
+    position: absolute;
+    left: 7%;
+    transition: .2s;
+}
+
+.moon1 {
+    transform: translateX(var(--moon-translate));
+    transition: .2s;
+}
+
+.sun1 {
+    transform: translateX(var(--sun-translate));
+    transition: .2s;
+    display: var(--sun-display);
+
+}
+
+.moon2 {
+    opacity: var(--moon-opacity);
+}
+
+.sun2 {
+    opacity: var(--sun-opacity);
+}
+
+button {
+    position: relative;
+    padding: 1.5rem;
+    font-size: 2rem;
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--btn-text-color);
+    transition: .5s;
+    border-radius: 10px;
+    padding-left: 4rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
